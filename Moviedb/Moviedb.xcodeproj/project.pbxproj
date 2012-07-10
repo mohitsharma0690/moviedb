@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9125CAEE15AC171700554D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAED15AC171700554D45 /* UIKit.framework */; };
+		9125CAF015AC171700554D45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAEF15AC171700554D45 /* Foundation.framework */; };
+		9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAF115AC171700554D45 /* CoreGraphics.framework */; };
+		9125CAF815AC171700554D45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9125CAF615AC171700554D45 /* InfoPlist.strings */; };
+		9125CAFA15AC171700554D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CAF915AC171700554D45 /* main.m */; };
+		9125CAFE15AC171800554D45 /* MovidbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */; };
+		9125CB0115AC171800554D45 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9125CAFF15AC171800554D45 /* MainStoryboard.storyboard */; };
+		9125CB0C15AC1D8A00554D45 /* MoviedbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */; };
+		9125CB0F15AC1F2200554D45 /* RateMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9125CAE915AC171700554D45 /* Moviedb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviedb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9125CAED15AC171700554D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9125CAEF15AC171700554D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9125CAF115AC171700554D45 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9125CAF515AC171700554D45 /* Moviedb-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moviedb-Info.plist"; sourceTree = "<group>"; };
+		9125CAF715AC171700554D45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9125CAF915AC171700554D45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9125CAFB15AC171700554D45 /* Moviedb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moviedb-Prefix.pch"; sourceTree = "<group>"; };
+		9125CAFC15AC171800554D45 /* MovidbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovidbAppDelegate.h; sourceTree = "<group>"; };
+		9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovidbAppDelegate.m; sourceTree = "<group>"; };
+		9125CB0015AC171800554D45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9125CB0A15AC1D8A00554D45 /* MoviedbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviedbViewController.h; sourceTree = "<group>"; };
+		9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviedbViewController.m; sourceTree = "<group>"; };
+		9125CB0D15AC1F2200554D45 /* RateMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateMovieViewController.h; sourceTree = "<group>"; };
+		9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateMovieViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9125CAE615AC171700554D45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9125CAEE15AC171700554D45 /* UIKit.framework in Frameworks */,
+				9125CAF015AC171700554D45 /* Foundation.framework in Frameworks */,
+				9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9125CADE15AC171700554D45 = {
+			isa = PBXGroup;
+			children = (
+				9125CB0D15AC1F2200554D45 /* RateMovieViewController.h */,
+				9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */,
+				9125CB0A15AC1D8A00554D45 /* MoviedbViewController.h */,
+				9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */,
+				9125CAF315AC171700554D45 /* Moviedb */,
+				9125CAEC15AC171700554D45 /* Frameworks */,
+				9125CAEA15AC171700554D45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9125CAEA15AC171700554D45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9125CAE915AC171700554D45 /* Moviedb.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9125CAEC15AC171700554D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9125CAED15AC171700554D45 /* UIKit.framework */,
+				9125CAEF15AC171700554D45 /* Foundation.framework */,
+				9125CAF115AC171700554D45 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9125CAF315AC171700554D45 /* Moviedb */ = {
+			isa = PBXGroup;
+			children = (
+				9125CAFC15AC171800554D45 /* MovidbAppDelegate.h */,
+				9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */,
+				9125CAFF15AC171800554D45 /* MainStoryboard.storyboard */,
+				9125CAF415AC171700554D45 /* Supporting Files */,
+			);
+			path = Moviedb;
+			sourceTree = "<group>";
+		};
+		9125CAF415AC171700554D45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9125CAF515AC171700554D45 /* Moviedb-Info.plist */,
+				9125CAF615AC171700554D45 /* InfoPlist.strings */,
+				9125CAF915AC171700554D45 /* main.m */,
+				9125CAFB15AC171700554D45 /* Moviedb-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9125CAE815AC171700554D45 /* Moviedb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9125CB0715AC171800554D45 /* Build configuration list for PBXNativeTarget "Moviedb" */;
+			buildPhases = (
+				9125CAE515AC171700554D45 /* Sources */,
+				9125CAE615AC171700554D45 /* Frameworks */,
+				9125CAE715AC171700554D45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moviedb;
+			productName = Moviedb;
+			productReference = 9125CAE915AC171700554D45 /* Moviedb.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9125CAE015AC171700554D45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Movidb;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 9125CAE315AC171700554D45 /* Build configuration list for PBXProject "Moviedb" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9125CADE15AC171700554D45;
+			productRefGroup = 9125CAEA15AC171700554D45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9125CAE815AC171700554D45 /* Moviedb */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9125CAE715AC171700554D45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9125CAF815AC171700554D45 /* InfoPlist.strings in Resources */,
+				9125CB0115AC171800554D45 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9125CAE515AC171700554D45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9125CAFA15AC171700554D45 /* main.m in Sources */,
+				9125CAFE15AC171800554D45 /* MovidbAppDelegate.m in Sources */,
+				9125CB0C15AC1D8A00554D45 /* MoviedbViewController.m in Sources */,
+				9125CB0F15AC1F2200554D45 /* RateMovieViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9125CAF615AC171700554D45 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9125CAF715AC171700554D45 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9125CAFF15AC171800554D45 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9125CB0015AC171800554D45 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9125CB0515AC171800554D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9125CB0615AC171800554D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9125CB0815AC171800554D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moviedb/Moviedb-Prefix.pch";
+				INFOPLIST_FILE = "Moviedb/Moviedb-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9125CB0915AC171800554D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moviedb/Moviedb-Prefix.pch";
+				INFOPLIST_FILE = "Moviedb/Moviedb-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9125CAE315AC171700554D45 /* Build configuration list for PBXProject "Moviedb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9125CB0515AC171800554D45 /* Debug */,
+				9125CB0615AC171800554D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9125CB0715AC171800554D45 /* Build configuration list for PBXNativeTarget "Moviedb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9125CB0815AC171800554D45 /* Debug */,
+				9125CB0915AC171800554D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9125CAE015AC171700554D45 /* Project object */;
+}
