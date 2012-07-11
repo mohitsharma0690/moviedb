@@ -7,6 +7,9 @@
 //
 
 #import "RateMovieViewController.h"
+#import "MovieInfo.h"
+#import "MoviedbAppDelegate.h"
+#import <Foundation/Foundation.h>
 
 @interface RateMovieViewController ()
 
@@ -68,19 +71,31 @@
 }
 
 - (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    MoviedbAppDelegate *appDelegate = (MoviedbAppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    [data setDictionary:self.movieData];
+    	
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     if([title isEqualToString:@"Good"]) {
         NSLog(@"User Rating : Good Movie");
+        [data setValue:[NSNumber numberWithInt:3] forKey:@"userRating"];
     } else if([title isEqualToString:@"Ok"]) {
         NSLog(@"User Rating : Ok Movie");
+        [data setValue:[NSNumber numberWithInt:2] forKey:@"userRating"];
     } else if([title isEqualToString:@"Bad"]) {
         NSLog(@"User Rating : Bad Movie");
+        [data setValue:[NSNumber numberWithInt:1] forKey:@"userRating"];
     } else {
         NSLog(@"No user rating");
     }
+    MovieInfo *movieObj = [[MovieInfo alloc] initMovieWithDict:data];
+    [appDelegate addMovie:movieObj];
+    [movieObj autorelease];
+    [data autorelease];
 }
 
-- (NSArray *) getDataFromJSON {
+- (id) getDataFromJSON {
     // modify the movie name to match the url required
     NSString *address = [NSString stringWithFormat:@"%@",_movieName];
     address = [address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -98,16 +113,29 @@
         id result = [NSJSONSerialization JSONObjectWithData:jsonData options:
                      NSJSONReadingMutableContainers error:&error];
         if(error == nil) {
-            NSLog(@"%@", result);
-            NSArray *arr = [[NSArray alloc] initWithObjects:[result objectForKey:@"rating"],
-                            [result objectForKey:@"year"], [result objectForKey:@"languages"], 
-                            [result objectForKey:@"country"], nil]; 
             [url release];
-            return [arr autorelease];
+            return result;
+//            NSLog(@"%@", result);
+//            if([[result objectForKey:@"code"] intValue]== 1) {
+//                [url autorelease];
+//                return [[[NSArray alloc] 
+//                         initWithObjects:@"n/a", @"n/a", @"n/a", @"n/a", @"n/a", @"n/a", @"n/a", nil] autorelease];
+//            
+//            } else {
+//                NSArray *arr = [[NSArray alloc] initWithObjects:[result objectForKey:@"imdbid"], 
+//                                [result objectForKey:@"title"],
+//                                [result objectForKey:@"rating"],
+//                                [result objectForKey:@"year"], 
+//                                [result objectForKey:@"languages"], 
+//                                [result objectForKey:@"country"],
+//                                [result objectForKey:@"genre"], nil]; 
+//                [url release];
+//                return [arr autorelease];
+//            } 
         }
     }
     [url release];
-    return [[[NSArray alloc] initWithObjects:@"n/a", @"n/a", @"n/a", @"n/a", nil] autorelease];    
+    return nil;
 }
 
 #pragma mark - Table view data source
@@ -133,18 +161,32 @@
     // Configure the cell...    
     if(indexPath.row == 0) {
         cell.textLabel.text = @"Rating";
+        if([self.movieData objectForKey:@"rating"] == nil) {
+            cell.detailTextLabel.text = @"n/a";
+        } else {
+            cell.detailTextLabel.text = [self.movieData objectForKey:@"rating"];
+        }
     } else if(indexPath.row == 1) {
         cell.textLabel.text = @"Year";
+        if([self.movieData objectForKey:@"year"] == nil) {
+            cell.detailTextLabel.text = @"n/a";
+        } else {
+            cell.detailTextLabel.text = [self.movieData objectForKey:@"year"];
+        }
     } else if(indexPath.row == 2) {
         cell.textLabel.text = @"Language";
+        if([self.movieData objectForKey:@"languages"] == nil) {
+            cell.detailTextLabel.text = @"n/a";
+        } else {
+            cell.detailTextLabel.text = [self.movieData objectForKey:@"languages"];
+        }
     } else {
         cell.textLabel.text = @"Country";
-    }
-    
-    if([_movieData count] > indexPath.row) {
-        cell.detailTextLabel.text = [_movieData objectAtIndex: indexPath.row];
-    } else {
-        cell.detailTextLabel.text = @"n/a";
+        if([self.movieData objectForKey:@"country"] == nil) {
+            cell.detailTextLabel.text = @"n/a";
+        } else {
+            cell.detailTextLabel.text = [self.movieData objectForKey:@"country"];
+        }
     }
     return cell;
 }

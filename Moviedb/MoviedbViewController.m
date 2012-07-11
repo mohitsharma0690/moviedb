@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSLog(@"IN ViewDidLoad for MoviedbViewController : UITabBarController");
+    
 }
 
 - (void)viewDidUnload
@@ -38,6 +39,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void) tabBar:(UITabBar *) tabBar didSelectItem:(UITabBarItem *) item {
+    
 }
 
 @end

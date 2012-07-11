@@ -13,6 +13,7 @@
 
 @synthesize window = _window;
 @synthesize movieArray = _movieArray;
+@synthesize tabController = _tabController;
 
 - (NSString *) getDBPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -37,6 +38,13 @@
     }
 }
 
+- (void) addMovie:(MovieInfo *)movieObj {
+    // add to database
+    [movieObj addMovie];
+    // add to array
+    [self.movieArray addObject:movieObj];
+}
+
 - (void)dealloc
 {
     [_window release];
@@ -57,6 +65,7 @@
     [temp release];
     // Once db is copied get Initial Data on Screen
     [MovieInfo getInitialDataToDisplay:[self getDBPath]];
+
     return YES;
 }
 							

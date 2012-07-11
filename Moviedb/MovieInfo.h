@@ -13,12 +13,30 @@
 @property (copy, nonatomic) NSString *imdbId;
 @property (copy, nonatomic) NSNumber *year;
 @property (copy, nonatomic) NSNumber *rating;
+@property (copy, nonatomic) NSString *country;
+@property (copy, nonatomic) NSString *language;
+@property (copy, nonatomic) NSNumber *userRating;
+@property (copy, nonatomic) NSString *blurp;
+@property (copy, nonatomic) NSString *genre;
+
 - (id) initMovieInforWithName:(NSString *) name 
                    withImdbID:(NSString *) imdbId
                      withYear:(NSNumber *) year
                    withRating:(NSNumber *) rating;
 
+- (id) initMovieWithImdbId: (NSString *) imdbId
+                 withName : (NSString *) name
+               withRating : (NSNumber *) rating
+                 withYear : (NSNumber *) year
+              withCountry : (NSString *) country
+             withLanguage : (NSString *) language
+           withUserRating : (NSNumber *) userRating
+                withBlurp : (NSString *) blurp
+                withGenre : (NSString *) genre;
+
+- (id) initMovieWithDict : (NSDictionary *) dict;
 - (id) initMovieWithName:(NSString *) name;
+- (void) addMovie;
 
 + (void) getInitialDataToDisplay:(NSString *) dbPath;
 + (void) finalizeStatements;

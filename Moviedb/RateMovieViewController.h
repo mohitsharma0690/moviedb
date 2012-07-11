@@ -12,9 +12,9 @@
 @property (retain, nonatomic) IBOutlet UITextField *movieNameTextField;
 @property (retain, nonatomic) IBOutlet UITableView *movieDataTableView;
 @property (retain, nonatomic) NSString *movieName;
-@property (retain, nonatomic) NSArray *movieData;
+@property (retain, nonatomic) id movieData;
 - (IBAction) getRatingMessage:(id)sender;
 
--(NSArray *) getDataFromJSON;
+-(id) getDataFromJSON;
 
 @end
