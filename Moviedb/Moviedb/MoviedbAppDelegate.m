@@ -6,21 +6,57 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MovidbAppDelegate.h"
+#import "MoviedbAppDelegate.h"
+#import "MovieInfo.h"
 
-@implementation MovidbAppDelegate
+@implementation MoviedbAppDelegate
 
 @synthesize window = _window;
+@synthesize movieArray = _movieArray;
+
+- (NSString *) getDBPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    NSLog(@"getDBPath is %@",[documentsDir stringByAppendingFormat:@"/moviedb.sqlite"]);
+    return [documentsDir stringByAppendingFormat:@"/moviedb.sqlite"];
+}
+
+- (void) copyDatabaseIfNeeded {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSString *dbPath = [self getDBPath];
+    BOOL succ = [fileManager fileExistsAtPath:dbPath];
+    if(!succ) {
+        NSLog(@"File didn't exist going to copy");
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"moviedb.sqlite"];
+        succ = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
+        if(!succ) {
+            NSLog(@"Failed to create writable database file");
+            NSAssert1(0, @"Failed to create writable database file with message '%@'",[error localizedDescription]);
+        }
+    }
+}
 
 - (void)dealloc
 {
     [_window release];
+    [_movieArray release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSLog(@"in application:didFinishLaunching...");
+    // copy database to user's phone if needed
+    [self copyDatabaseIfNeeded];
+    
+    // initialize movieInfo Array
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    _movieArray = [temp retain];
+    
+    [temp release];
+    // Once db is copied get Initial Data on Screen
+    [MovieInfo getInitialDataToDisplay:[self getDBPath]];
     return YES;
 }
 							

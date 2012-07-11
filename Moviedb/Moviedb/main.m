@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MovidbAppDelegate.h"
+#import "MoviedbAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MovidbAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MoviedbAppDelegate class]));
     }
 }

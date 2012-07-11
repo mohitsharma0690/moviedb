@@ -12,10 +12,14 @@
 		9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAF115AC171700554D45 /* CoreGraphics.framework */; };
 		9125CAF815AC171700554D45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9125CAF615AC171700554D45 /* InfoPlist.strings */; };
 		9125CAFA15AC171700554D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CAF915AC171700554D45 /* main.m */; };
-		9125CAFE15AC171800554D45 /* MovidbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */; };
+		9125CAFE15AC171800554D45 /* MoviedbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CAFD15AC171800554D45 /* MoviedbAppDelegate.m */; };
 		9125CB0115AC171800554D45 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9125CAFF15AC171800554D45 /* MainStoryboard.storyboard */; };
 		9125CB0C15AC1D8A00554D45 /* MoviedbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */; };
 		9125CB0F15AC1F2200554D45 /* RateMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */; };
+		91474FCA15ACA79600788FD5 /* SearchDbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91474FC915ACA79600788FD5 /* SearchDbViewController.m */; };
+		91474FCC15ACBF7100788FD5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */; };
+		915E1D3415AC600E00B0BDC9 /* moviedb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 915E1D3315AC600E00B0BDC9 /* moviedb.sqlite */; };
+		915E1D3715AC634600B0BDC9 /* MovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 915E1D3615AC634600B0BDC9 /* MovieInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +31,20 @@
 		9125CAF715AC171700554D45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9125CAF915AC171700554D45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9125CAFB15AC171700554D45 /* Moviedb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moviedb-Prefix.pch"; sourceTree = "<group>"; };
-		9125CAFC15AC171800554D45 /* MovidbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovidbAppDelegate.h; sourceTree = "<group>"; };
-		9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovidbAppDelegate.m; sourceTree = "<group>"; };
+		9125CAFC15AC171800554D45 /* MoviedbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviedbAppDelegate.h; sourceTree = "<group>"; };
+		9125CAFD15AC171800554D45 /* MoviedbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviedbAppDelegate.m; sourceTree = "<group>"; };
 		9125CB0015AC171800554D45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9125CB0A15AC1D8A00554D45 /* MoviedbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviedbViewController.h; sourceTree = "<group>"; };
 		9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviedbViewController.m; sourceTree = "<group>"; };
 		9125CB0D15AC1F2200554D45 /* RateMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateMovieViewController.h; sourceTree = "<group>"; };
 		9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateMovieViewController.m; sourceTree = "<group>"; };
+		91474FC815ACA79600788FD5 /* SearchDbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDbViewController.h; sourceTree = "<group>"; };
+		91474FC915ACA79600788FD5 /* SearchDbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDbViewController.m; sourceTree = "<group>"; };
+		91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = file; name = libsqlite3.0.dylib; path = ../../libsqlite3.0.dylib; sourceTree = "<group>"; };
+		915E1D3015AC5F7400B0BDC9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		915E1D3315AC600E00B0BDC9 /* moviedb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = moviedb.sqlite; sourceTree = "<group>"; };
+		915E1D3515AC634600B0BDC9 /* MovieInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInfo.h; sourceTree = "<group>"; };
+		915E1D3615AC634600B0BDC9 /* MovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91474FCC15ACBF7100788FD5 /* libsqlite3.0.dylib in Frameworks */,
 				9125CAEE15AC171700554D45 /* UIKit.framework in Frameworks */,
 				9125CAF015AC171700554D45 /* Foundation.framework in Frameworks */,
 				9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */,
@@ -53,10 +65,17 @@
 		9125CADE15AC171700554D45 = {
 			isa = PBXGroup;
 			children = (
+				91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */,
+				915E1D3315AC600E00B0BDC9 /* moviedb.sqlite */,
+				915E1D3015AC5F7400B0BDC9 /* libsqlite3.0.dylib */,
 				9125CB0D15AC1F2200554D45 /* RateMovieViewController.h */,
 				9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */,
 				9125CB0A15AC1D8A00554D45 /* MoviedbViewController.h */,
 				9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */,
+				91474FC815ACA79600788FD5 /* SearchDbViewController.h */,
+				91474FC915ACA79600788FD5 /* SearchDbViewController.m */,
+				915E1D3515AC634600B0BDC9 /* MovieInfo.h */,
+				915E1D3615AC634600B0BDC9 /* MovieInfo.m */,
 				9125CAF315AC171700554D45 /* Moviedb */,
 				9125CAEC15AC171700554D45 /* Frameworks */,
 				9125CAEA15AC171700554D45 /* Products */,
@@ -84,8 +103,8 @@
 		9125CAF315AC171700554D45 /* Moviedb */ = {
 			isa = PBXGroup;
 			children = (
-				9125CAFC15AC171800554D45 /* MovidbAppDelegate.h */,
-				9125CAFD15AC171800554D45 /* MovidbAppDelegate.m */,
+				9125CAFC15AC171800554D45 /* MoviedbAppDelegate.h */,
+				9125CAFD15AC171800554D45 /* MoviedbAppDelegate.m */,
 				9125CAFF15AC171800554D45 /* MainStoryboard.storyboard */,
 				9125CAF415AC171700554D45 /* Supporting Files */,
 			);
@@ -154,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915E1D3415AC600E00B0BDC9 /* moviedb.sqlite in Resources */,
 				9125CAF815AC171700554D45 /* InfoPlist.strings in Resources */,
 				9125CB0115AC171800554D45 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -167,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9125CAFA15AC171700554D45 /* main.m in Sources */,
-				9125CAFE15AC171800554D45 /* MovidbAppDelegate.m in Sources */,
+				9125CAFE15AC171800554D45 /* MoviedbAppDelegate.m in Sources */,
 				9125CB0C15AC1D8A00554D45 /* MoviedbViewController.m in Sources */,
 				9125CB0F15AC1F2200554D45 /* RateMovieViewController.m in Sources */,
+				915E1D3715AC634600B0BDC9 /* MovieInfo.m in Sources */,
+				91474FCA15ACA79600788FD5 /* SearchDbViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,9 +263,14 @@
 		9125CB0815AC171800554D45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moviedb/Moviedb-Prefix.pch";
 				INFOPLIST_FILE = "Moviedb/Moviedb-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../..\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -252,9 +279,15 @@
 		9125CB0915AC171800554D45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Moviedb/Developer/4.0/Instruments/Frameworks\"",
+					"\"$(SRCROOT)/Moviedb/Developer/4.0/Instruments/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moviedb/Moviedb-Prefix.pch";
 				INFOPLIST_FILE = "Moviedb/Moviedb-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,6 +312,7 @@
 				9125CB0915AC171800554D45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

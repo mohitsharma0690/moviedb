@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovidbAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MoviedbAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) NSMutableArray *movieArray;
+
+- (void) copyDatabaseIfNeeded;
+- (NSString *) getDBPath;
 
 @end

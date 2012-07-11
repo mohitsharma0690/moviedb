@@ -6,17 +6,59 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Search-->
+        <!--Search Db View Controller - Search-->
         <scene sceneID="g4B-EO-Jb4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kS2-gL-nRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ofF-La-9XD" sceneMemberID="viewController">
+                <viewController id="ofF-La-9XD" customClass="SearchDbViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Syn-Wy-THE">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Movie Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="unD-6b-B1k">
+                                <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BPo-t7-Y2y">
+                                <rect key="frame" x="31" y="54" width="258" height="337"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" textLabel="9A8-dL-oRH" style="IBUITableViewCellStyleDefault" id="qMv-Nb-53J">
+                                        <rect key="frame" x="0.0" y="22" width="258" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9A8-dL-oRH">
+                                                    <rect key="frame" x="10" y="0.0" width="218" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" label=""/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ofF-La-9XD" id="ZzR-qs-fA3"/>
+                                    <outlet property="delegate" destination="ofF-La-9XD" id="Saa-0Q-iAX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="r9B-By-cB2"/>
+                    <connections>
+                        <outlet property="movieDbTableView" destination="BPo-t7-Y2y" id="Cne-zw-tGx"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="610" y="416"/>
@@ -190,7 +232,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMC-tm-aBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="qq6-e1-zQe" customClass="MoviedbViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RZD-pW-5Wp">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -205,6 +247,25 @@
             <point key="canvasLocation" x="86" y="76"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MoviedbViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoviedbViewController.h"/>
+        </class>
+        <class className="RateMovieViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RateMovieViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="getRatingMessage:"/>
+                <relationship kind="outlet" name="movieDataTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="movieNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SearchDbViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchDbViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieDbTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
