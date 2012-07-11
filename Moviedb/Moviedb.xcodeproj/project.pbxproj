@@ -20,6 +20,7 @@
 		91474FCC15ACBF7100788FD5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */; };
 		915E1D3415AC600E00B0BDC9 /* moviedb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 915E1D3315AC600E00B0BDC9 /* moviedb.sqlite */; };
 		915E1D3715AC634600B0BDC9 /* MovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 915E1D3615AC634600B0BDC9 /* MovieInfo.m */; };
+		916CB7BB15ADBBBB001D7299 /* MoviedetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CB7BA15ADBBBB001D7299 /* MoviedetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +41,13 @@
 		9125CB0E15AC1F2200554D45 /* RateMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateMovieViewController.m; sourceTree = "<group>"; };
 		91474FC815ACA79600788FD5 /* SearchDbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDbViewController.h; sourceTree = "<group>"; };
 		91474FC915ACA79600788FD5 /* SearchDbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDbViewController.m; sourceTree = "<group>"; };
-		91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = file; name = libsqlite3.0.dylib; path = ../../libsqlite3.0.dylib; sourceTree = "<group>"; };
+		91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = ../../libsqlite3.0.dylib; sourceTree = "<group>"; };
 		915E1D3015AC5F7400B0BDC9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		915E1D3315AC600E00B0BDC9 /* moviedb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = moviedb.sqlite; sourceTree = "<group>"; };
 		915E1D3515AC634600B0BDC9 /* MovieInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInfo.h; sourceTree = "<group>"; };
 		915E1D3615AC634600B0BDC9 /* MovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInfo.m; sourceTree = "<group>"; };
+		916CB7B915ADBBBB001D7299 /* MoviedetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoviedetailViewController.h; path = Moviedb/MoviedetailViewController.h; sourceTree = "<group>"; };
+		916CB7BA15ADBBBB001D7299 /* MoviedetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoviedetailViewController.m; path = Moviedb/MoviedetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				9125CB0B15AC1D8A00554D45 /* MoviedbViewController.m */,
 				91474FC815ACA79600788FD5 /* SearchDbViewController.h */,
 				91474FC915ACA79600788FD5 /* SearchDbViewController.m */,
+				916CB7B915ADBBBB001D7299 /* MoviedetailViewController.h */,
+				916CB7BA15ADBBBB001D7299 /* MoviedetailViewController.m */,
 				915E1D3515AC634600B0BDC9 /* MovieInfo.h */,
 				915E1D3615AC634600B0BDC9 /* MovieInfo.m */,
 				9125CAF315AC171700554D45 /* Moviedb */,
@@ -192,6 +197,7 @@
 				9125CB0F15AC1F2200554D45 /* RateMovieViewController.m in Sources */,
 				915E1D3715AC634600B0BDC9 /* MovieInfo.m in Sources */,
 				91474FCA15ACA79600788FD5 /* SearchDbViewController.m in Sources */,
+				916CB7BB15ADBBBB001D7299 /* MoviedetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "SearchDbViewController.h"
 #import "MoviedbAppDelegate.h"
 #import "MovieInfo.h"
+#import "MoviedetailViewController.h"
 
 @interface SearchDbViewController ()
 
@@ -76,6 +77,15 @@
     return cell;
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showMovieDetail"]) {
+        NSIndexPath *indexPath = [self.movieDbTableView indexPathForSelectedRow];
+        MovieDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.movieData = [appDelegate.movieArray objectAtIndex:indexPath.row];
+        NSLog(@"name : %@",[destViewController.movieData name]);
+        NSLog(@"rating : %@",[destViewController.movieData rating]);
+    }
+}
 - (void)dealloc {
     [_movieDbTableView release];
     [_movieName release];

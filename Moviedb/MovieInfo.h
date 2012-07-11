@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface MovieInfo : NSObject
-@property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *imdbId;
-@property (copy, nonatomic) NSNumber *year;
+@property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSNumber *rating;
+@property (copy, nonatomic) NSNumber *year;
 @property (copy, nonatomic) NSString *country;
 @property (copy, nonatomic) NSString *language;
 @property (copy, nonatomic) NSNumber *userRating;

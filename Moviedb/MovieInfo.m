@@ -106,16 +106,27 @@ static sqlite3_stmt *addStmt = nil;
     NSLog(@"in getInitialDataToDisplay");
     MoviedbAppDelegate *appDelegate = (MoviedbAppDelegate *) [[UIApplication sharedApplication] delegate];
     if(sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
-        const char *sql = "select name from userData";
+        const char *sql = "select * from userData";
         sqlite3_stmt *selectStmt;
         if(sqlite3_prepare_v2(database, sql, -1, &selectStmt, NULL) == SQLITE_OK) {
             NSLog(@"The query seems to be ok");
             while(sqlite3_step(selectStmt) == SQLITE_ROW) {
-                char *name = (char *) sqlite3_column_text(selectStmt, 0);
+                // get all relevant data from DB
+                NSString *imdbId = [NSString stringWithUTF8String: (char *) sqlite3_column_text(selectStmt, 0)];
+                char *name = (char *) sqlite3_column_text(selectStmt, 1);
+                NSNumber *rating = [NSNumber numberWithDouble: sqlite3_column_double(selectStmt, 2)];
+                NSNumber *year = [NSNumber numberWithInt: sqlite3_column_int(selectStmt, 3)];
+                NSString *country = [NSString stringWithUTF8String:(char *) sqlite3_column_text(selectStmt, 4)];
+                NSString *language = [NSString stringWithUTF8String:(char *) sqlite3_column_text(selectStmt, 5)];
+                NSNumber *userRating = [NSNumber numberWithInt:sqlite3_column_int(selectStmt, 6 )];
+                NSString *genre = [NSString stringWithUTF8String: (char *) sqlite3_column_text(selectStmt, 8)];
+                
                 NSLog(@"we got a row ");
                 printf("name : %s\n",name);
                 NSString *movieName = [NSString stringWithUTF8String:name];
-                MovieInfo *movieInfoObj = [[MovieInfo alloc] initMovieWithName:movieName];
+                
+                MovieInfo *movieInfoObj = [[MovieInfo alloc] initMovieWithImdbId:imdbId withName:movieName withRating:rating withYear:year withCountry:country withLanguage:language withUserRating:userRating withBlurp:nil withGenre:genre];
+                
                 [appDelegate.movieArray addObject:movieInfoObj];
                 
                 [movieInfoObj release];

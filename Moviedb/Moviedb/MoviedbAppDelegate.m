@@ -65,7 +65,7 @@
     [temp release];
     // Once db is copied get Initial Data on Screen
     [MovieInfo getInitialDataToDisplay:[self getDBPath]];
-
+    NSLog(@"rating : %@",[[self.movieArray objectAtIndex:0] rating]);
     return YES;
 }
 							
