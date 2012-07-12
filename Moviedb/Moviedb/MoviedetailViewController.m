@@ -82,7 +82,7 @@
             break;
         case 1:
             cell.textLabel.text = @"Rating";
-            cell.detailTextLabel.text = [[self.movieData rating] stringValue];
+            cell.detailTextLabel.text = [[[self.movieData rating] stringValue] substringToIndex:3];
             break;
         case 2:
             cell.textLabel.text = @"Year";
@@ -94,15 +94,26 @@
             break;
         case 4:
             cell.textLabel.text = @"Language";
-            cell.detailTextLabel.text = [self.movieData language];
+            cell.detailTextLabel.text = [[[self.movieData language] componentsSeparatedByString:@","] objectAtIndex:0];
             break;
         case 5:
             cell.textLabel.text = @"Your Rating";
-            cell.detailTextLabel.text = [[self.movieData userRating] stringValue];
+            switch ([[self.movieData userRating] intValue]) {
+                case 3:
+                    cell.detailTextLabel.text = @"AWESOME !!";
+                    break;
+                case 2:
+                    cell.detailTextLabel.text = @"So So .. ";
+                    break;
+                case 1:
+                    cell.detailTextLabel.text = @"Sucks";
+                default:
+                    break;
+            }
             break;
         case 6:
             cell.textLabel.text = @"Genre";
-            cell.detailTextLabel.text = [self.movieData genre];
+            cell.detailTextLabel.text = [[[self.movieData genre] componentsSeparatedByString:@","] objectAtIndex:0];
             break;
         default:
             cell.textLabel.text = @"N/A";

@@ -45,7 +45,9 @@
     NSArray *sortDescs = [NSArray arrayWithObject:sortDesc];
     self.sortedMovies = [NSMutableArray arrayWithArray:[appDelegate.movieArray sortedArrayUsingDescriptors:sortDescs]];
     [self.tableView reloadData];
+    [sortDesc release];
 }
+
 - (void)viewDidUnload
 {
     [self setTableView:nil];

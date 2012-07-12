@@ -15,6 +15,9 @@
 @property (retain, nonatomic) id movieData;
 - (IBAction) getRatingMessage:(id)sender;
 
--(id) getDataFromJSON;
+@property (retain, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+
+- (id) getDataFromJSON;
+- (IBAction)hideKeyboard:(id)sender;
 
 @end

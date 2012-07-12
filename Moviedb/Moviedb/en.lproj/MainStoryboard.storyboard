@@ -20,7 +20,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-688" y="563"/>
+            <point key="canvasLocation" x="-133" y="457"/>
         </scene>
         <!--Search Db View Controller - Search-->
         <scene sceneID="g4B-EO-Jb4">
@@ -74,7 +74,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="105" y="368"/>
+            <point key="canvasLocation" x="509" y="-61"/>
         </scene>
         <!--Rate Movie View Controller - RateMovie-->
         <scene sceneID="bRw-Fa-w9n">
@@ -97,6 +97,7 @@
                                 <rect key="frame" x="20" y="117" width="280" height="206"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoviedbCell" textLabel="EoY-ij-Sgk" detailTextLabel="WKC-iu-csP" style="IBUITableViewCellStyleValue1" id="H46-dy-RrA">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
@@ -202,6 +203,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="Pxc-sG-nen" id="5GV-xU-qJq"/>
                                     <outlet property="delegate" destination="Pxc-sG-nen" id="Qs4-iP-IPA"/>
+                                    <outletCollection property="gestureRecognizers" destination="wJE-wx-S5s" appends="YES" id="5Da-Yr-uBT"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vbW-PN-P1N">
@@ -219,7 +221,7 @@
                                     <action selector="getRatingMessage:" destination="Pxc-sG-nen" eventType="touchUpInside" id="uwl-g9-oqK"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Movie Name" textAlignment="center" minimumFontSize="17" id="CqO-i5-YUQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Movie Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="CqO-i5-YUQ">
                                 <rect key="frame" x="20" y="65" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -230,15 +232,22 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="mostRecent" id="ME8-4l-6pY"/>
                     <connections>
                         <outlet property="movieDataTableView" destination="W5G-ce-T03" id="PmC-Uf-ECt"/>
                         <outlet property="movieNameTextField" destination="CqO-i5-YUQ" id="WBg-mu-5gv"/>
+                        <outlet property="tapGesture" destination="wJE-wx-S5s" id="Dmo-js-WOX"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="wJE-wx-S5s">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="Pxc-sG-nen" id="l7C-cT-ezb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="610" y="-233"/>
+            <point key="canvasLocation" x="34" y="-365"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UCy-wW-4Du">
@@ -256,6 +265,7 @@
                         <segue destination="Pxc-sG-nen" kind="relationship" relationship="viewControllers" id="yTb-me-rdH"/>
                         <segue destination="hcq-Vh-G26" kind="relationship" relationship="viewControllers" id="lRM-s5-ywC"/>
                         <segue destination="s9U-rM-8Hv" kind="relationship" relationship="viewControllers" id="OaK-Gy-AsE"/>
+                        <segue destination="deU-6m-CYw" kind="relationship" relationship="viewControllers" id="zEu-Ue-a3n"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -318,7 +328,44 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-151" y="709"/>
+            <point key="canvasLocation" x="489" y="501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0iU-OX-ZVg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5b-n3-bVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="deU-6m-CYw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="C0v-VA-UjP"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="M6v-3a-eeI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vGm-lu-y1u" kind="relationship" relationship="rootViewController" id="w9o-IF-WBW"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-617" y="689"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fkt-zL-RhG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioh-Jr-2fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vGm-lu-y1u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wsv-M6-7EJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" id="QGA-ki-ggO">
+                                <rect key="frame" x="0.0" y="93" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nLc-RN-qJD"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="135" y="1207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9bk-8l-kG4">
@@ -338,7 +385,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="62" y="239"/>
+            <point key="canvasLocation" x="210" y="-61"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="yZa-20-NjT">
@@ -405,7 +452,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="341" y="260"/>
+            <point key="canvasLocation" x="945" y="-56"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="RDk-DU-nDT">
@@ -442,7 +489,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="520" y="702"/>
+            <point key="canvasLocation" x="1628" y="106"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -451,6 +498,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Gja-Su-PWH"/>
+        <segue reference="En3-0y-5Dj"/>
     </inferredMetricsTieBreakers>
 </document>

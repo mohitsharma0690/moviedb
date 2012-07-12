@@ -16,6 +16,7 @@
 @end
 
 @implementation RateMovieViewController
+@synthesize tapGesture = _tapGesture;
 @synthesize movieNameTextField = _movieNameTextField;
 @synthesize movieDataTableView = _movieDataTableView;
 @synthesize movieData = _movieData;
@@ -40,6 +41,8 @@
 {
     [self setMovieNameTextField:nil];
     [self setMovieDataTableView:nil];
+    [self setTapGesture:nil];
+    [self setTapGesture:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -198,11 +201,18 @@
 
 // Table View data source ends
 
+- (IBAction)hideKeyboard:(id)sender {
+    [self.movieNameTextField resignFirstResponder];
+}
+
 - (void)dealloc {
     [_movieNameTextField release];
     [_movieDataTableView release];
     [_movieName release];
     [_movieData release];
+    [_tapGesture release];
+    [_tapGesture release];
     [super dealloc];
 }
+
 @end

@@ -39,6 +39,10 @@
 }
 
 - (void) addMovie:(MovieInfo *)movieObj {
+    // change genre, language of movieObj to primary genre
+    // [movieObj setGenre:[[[movieObj genre] componentsSeparatedByString:@","] objectAtIndex:0]];
+    // [movieObj setLanguage:[[[movieObj language] componentsSeparatedByString:@","] objectAtIndex:0]];
+    
     // add to database
     [movieObj addMovie];
     // add to array
