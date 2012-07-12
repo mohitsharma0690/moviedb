@@ -82,8 +82,8 @@
         NSIndexPath *indexPath = [self.movieDbTableView indexPathForSelectedRow];
         MovieDetailViewController *destViewController = segue.destinationViewController;
         destViewController.movieData = [appDelegate.movieArray objectAtIndex:indexPath.row];
-        NSLog(@"name : %@",[destViewController.movieData name]);
-        NSLog(@"rating : %@",[destViewController.movieData rating]);
+//        NSLog(@"name : %@",[destViewController.movieData name]);
+//        NSLog(@"rating : %@",[destViewController.movieData rating]);
     }
 }
 - (void)dealloc {
