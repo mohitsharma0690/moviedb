@@ -10,6 +10,8 @@
 		911A6DE415AE96DF003EEDFD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A6DE315AE96DF003EEDFD /* WebViewController.m */; };
 		911A6DE815AEA4D5003EEDFD /* TopRatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A6DE715AEA4D5003EEDFD /* TopRatedViewController.m */; };
 		911A6DEB15AEDB94003EEDFD /* CustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A6DEA15AEDB94003EEDFD /* CustomSearchViewController.m */; };
+		911A6DED15AEFB2B003EEDFD /* logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911A6DEC15AEFB2B003EEDFD /* logo.jpeg */; };
+		911A6DEF15AEFC39003EEDFD /* logo1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911A6DEE15AEFC39003EEDFD /* logo1.jpeg */; };
 		9125CAEE15AC171700554D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAED15AC171700554D45 /* UIKit.framework */; };
 		9125CAF015AC171700554D45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAEF15AC171700554D45 /* Foundation.framework */; };
 		9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAF115AC171700554D45 /* CoreGraphics.framework */; };
@@ -33,6 +35,8 @@
 		911A6DE715AEA4D5003EEDFD /* TopRatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRatedViewController.m; sourceTree = "<group>"; };
 		911A6DE915AEDB94003EEDFD /* CustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchViewController.h; sourceTree = "<group>"; };
 		911A6DEA15AEDB94003EEDFD /* CustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchViewController.m; sourceTree = "<group>"; };
+		911A6DEC15AEFB2B003EEDFD /* logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpeg; sourceTree = "<group>"; };
+		911A6DEE15AEFC39003EEDFD /* logo1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo1.jpeg; sourceTree = "<group>"; };
 		9125CAE915AC171700554D45 /* Moviedb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviedb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9125CAED15AC171700554D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9125CAEF15AC171700554D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +81,7 @@
 		9125CADE15AC171700554D45 = {
 			isa = PBXGroup;
 			children = (
+				911A6DEE15AEFC39003EEDFD /* logo1.jpeg */,
 				911A6DE915AEDB94003EEDFD /* CustomSearchViewController.h */,
 				911A6DEA15AEDB94003EEDFD /* CustomSearchViewController.m */,
 				91474FCB15ACBF7100788FD5 /* libsqlite3.0.dylib */,
@@ -113,6 +118,7 @@
 		9125CAEC15AC171700554D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				911A6DEC15AEFB2B003EEDFD /* logo.jpeg */,
 				9125CAED15AC171700554D45 /* UIKit.framework */,
 				9125CAEF15AC171700554D45 /* Foundation.framework */,
 				9125CAF115AC171700554D45 /* CoreGraphics.framework */,
@@ -196,6 +202,8 @@
 				915E1D3415AC600E00B0BDC9 /* moviedb.sqlite in Resources */,
 				9125CAF815AC171700554D45 /* InfoPlist.strings in Resources */,
 				9125CB0115AC171800554D45 /* MainStoryboard.storyboard in Resources */,
+				911A6DED15AEFB2B003EEDFD /* logo.jpeg in Resources */,
+				911A6DEF15AEFC39003EEDFD /* logo1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

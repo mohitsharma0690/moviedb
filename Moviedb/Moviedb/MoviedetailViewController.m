@@ -78,7 +78,7 @@
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"IMDB id";
-            cell.detailTextLabel.text = [self.movieData imdbId];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"http://www.imdb.com/title/%@",[self.movieData imdbId]];
             break;
         case 1:
             cell.textLabel.text = @"Rating";
