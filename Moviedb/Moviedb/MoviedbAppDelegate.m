@@ -14,6 +14,7 @@
 @synthesize window = _window;
 @synthesize movieArray = _movieArray;
 @synthesize tabController = _tabController;
+@synthesize dbStatus = _dbStatus;
 
 - (NSString *) getDBPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -22,7 +23,7 @@
     return [documentsDir stringByAppendingFormat:@"/moviedb.sqlite"];
 }
 
-- (void) copyDatabaseIfNeeded {
+- (BOOL) copyDatabaseIfNeeded {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
     NSString *dbPath = [self getDBPath];
@@ -33,20 +34,24 @@
         succ = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
         if(!succ) {
             NSLog(@"Failed to create writable database file");
-            NSAssert1(0, @"Failed to create writable database file with message '%@'",[error localizedDescription]);
+            //NSAssert1(0, @"Failed to create writable database file with message '%@'",[error localizedDescription]);
         }
     }
+    return succ;
 }
 
-- (void) addMovie:(MovieInfo *)movieObj {
+- (BOOL) addMovie:(MovieInfo *)movieObj {
     // change genre, language of movieObj to primary genre
     // [movieObj setGenre:[[[movieObj genre] componentsSeparatedByString:@","] objectAtIndex:0]];
     // [movieObj setLanguage:[[[movieObj language] componentsSeparatedByString:@","] objectAtIndex:0]];
     
     // add to database
-    [movieObj addMovie];
+    BOOL status = [movieObj addMovie];
     // add to array
-    [self.movieArray addObject:movieObj];
+    if(status) {
+        [self.movieArray addObject:movieObj];
+    }
+    return status;
 }
 
 - (void)dealloc
@@ -60,7 +65,7 @@
 {
     NSLog(@"in application:didFinishLaunching...");
     // copy database to user's phone if needed
-    [self copyDatabaseIfNeeded];
+    self.dbStatus = [self copyDatabaseIfNeeded];
     
     // initialize movieInfo Array
     NSMutableArray *temp = [[NSMutableArray alloc] init];
@@ -69,7 +74,7 @@
     [temp release];
     // Once db is copied get Initial Data on Screen
     [MovieInfo getInitialDataToDisplay:[self getDBPath]];
-    NSLog(@"rating : %@",[[self.movieArray objectAtIndex:0] rating]);
+    //NSLog(@"rating : %@",[[self.movieArray objectAtIndex:0] rating]);
     return YES;
 }
 							

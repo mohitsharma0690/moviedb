@@ -55,12 +55,52 @@
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     if(textField == _movieNameTextField) {
         [textField resignFirstResponder];
-        self.movieName = [textField text];
-        self.movieData = [self getDataFromJSON];
-        // reload table
-        [_movieDataTableView reloadData];
+        if(textField.text.length > 0) {
+            self.movieName = [textField text];
+            self.movieData = [self getDataFromJSON];
+            // reload table
+            [_movieDataTableView reloadData];
+            if([self.movieData objectForKey:@"imdbid"] == nil) {
+                [self showMsgCannotFindMovie];
+            }
+        }
     }
     return YES;
+}
+
+- (void) showMsgCannotFindMovie {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cannot find Movie" 
+                                            message:@"Check the name or try again" 
+                                            delegate:self 
+                                            cancelButtonTitle:@"OK" 
+                                            otherButtonTitles: nil];
+    [alertView show];
+    [alertView autorelease];
+}
+- (void) showErrorMsgCheckInternet {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" 
+                                            message:@"There seems to be some problem. Check Internet Connection or try again later." 
+                                            delegate:self 
+                                            cancelButtonTitle:@"OK" 
+                                            otherButtonTitles:nil];
+    [alertView show];
+    [alertView autorelease];
+}
+- (void) showMsgDbInsertResult:(BOOL) status {
+    NSString *msg;
+    if(status) {
+        msg = [NSString stringWithFormat:@"Movie entered into your database"];
+    } else {
+        msg = [NSString stringWithFormat:@"Cannot insert into the database. Try again later."];
+    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil 
+                                            message:msg 
+                                            delegate:self 
+                                            cancelButtonTitle:@"OK" 
+                                            otherButtonTitles:nil];
+    [alertView show];
+    [alertView autorelease];
+
 }
 
 - (IBAction)getRatingMessage:(id)sender {
@@ -97,8 +137,9 @@
     }
     if(check) {
         MovieInfo *movieObj = [[MovieInfo alloc] initMovieWithDict:data];
-        [appDelegate addMovie:movieObj];
+        BOOL status = [appDelegate addMovie:movieObj];
         [movieObj autorelease];
+        [self showMsgDbInsertResult:status];
     }
     [data autorelease];
 }
@@ -140,11 +181,18 @@
 //                [url release];
 //                return [arr autorelease];
 //            } 
+        } else {
+            [self showErrorMsgCheckInternet];
         }
+    } else {
+        // some problem with the internet
+        [self showErrorMsgCheckInternet];
     }
     [url release];
     return nil;
 }
+
+
 
 #pragma mark - Table view data source
 

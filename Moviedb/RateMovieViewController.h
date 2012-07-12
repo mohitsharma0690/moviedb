@@ -19,5 +19,8 @@
 
 - (id) getDataFromJSON;
 - (IBAction)hideKeyboard:(id)sender;
+- (void) showErrorMsgCheckInternet;
+- (void) showMsgCannotFindMovie;
+- (void) showMsgDbInsertResult:(BOOL) status;
 
 @end

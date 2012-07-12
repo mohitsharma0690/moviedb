@@ -36,7 +36,7 @@
 
 - (id) initMovieWithDict : (NSDictionary *) dict;
 - (id) initMovieWithName:(NSString *) name;
-- (void) addMovie;
+- (BOOL) addMovie;
 
 + (void) getInitialDataToDisplay:(NSString *) dbPath;
 + (void) finalizeStatements;

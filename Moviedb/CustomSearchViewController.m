@@ -151,6 +151,12 @@
     }
 }
 
+- (void) showMessage:(NSString *)msg {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Inconvenience Regretted" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    [alertView autorelease];
+}
+
 - (void)dealloc {
     [_pickerView release];
     [_tableView release];

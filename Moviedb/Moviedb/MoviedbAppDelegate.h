@@ -14,9 +14,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (retain, nonatomic) NSMutableArray *movieArray;
 @property (retain, nonatomic) UITabBarController *tabController;
+@property BOOL dbStatus;
 
-- (void) copyDatabaseIfNeeded;
+- (BOOL) copyDatabaseIfNeeded;
 - (NSString *) getDBPath;
-- (void) addMovie:(MovieInfo *) movieObj;
+- (BOOL) addMovie:(MovieInfo *) movieObj;
 
 @end

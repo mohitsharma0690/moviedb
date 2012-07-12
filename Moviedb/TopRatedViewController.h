@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MovieInfo.h"
 
-@interface TopRatedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface TopRatedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
     MoviedbAppDelegate *appDelegate;
 }
 @property (retain, nonatomic) NSMutableArray *sortedMovies;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+- (void) showMessage:(NSString *)msg;
 @end

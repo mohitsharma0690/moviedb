@@ -34,7 +34,17 @@
     appDelegate = (MoviedbAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(@"viewDidLoad for SearchDbViewController %@",[appDelegate description]);
     self.title = @"Your Movie Collection";
-    // need to check
+    // check database status
+    if(!appDelegate.dbStatus) {
+        NSString *msg = [NSString stringWithFormat:@"There seems to be some problem with the database"];
+        [self showErrorMessage:msg];
+    }
+}
+
+- (void) showErrorMessage:(NSString *)msg {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Inconvenience Regretted" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alertView show];
+    [alertView autorelease];
 }
 
 - (void)viewDidUnload

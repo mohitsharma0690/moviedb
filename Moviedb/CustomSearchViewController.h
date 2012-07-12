@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomSearchViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate >
+@interface CustomSearchViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate , UIAlertViewDelegate>
 @property (retain, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *movieData;
 @property NSInteger selectedRow;
 
 - (void) performSortBasedOnRow:(NSInteger) row;
+- (void) showMessage:(NSString *)msg;
+
 @end

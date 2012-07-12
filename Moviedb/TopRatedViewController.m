@@ -36,7 +36,17 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     NSSortDescriptor *sortDesc = [[[NSSortDescriptor alloc] initWithKey:@"userRating" ascending:NO] autorelease];
     NSArray *sortDescs = [NSArray arrayWithObject:sortDesc];
-    self.sortedMovies = [NSMutableArray arrayWithArray:[appDelegate.movieArray sortedArrayUsingDescriptors:sortDescs]];    
+    self.sortedMovies = [NSMutableArray arrayWithArray:[appDelegate.movieArray sortedArrayUsingDescriptors:sortDescs]];   
+    if(!appDelegate.dbStatus) {
+        NSString *msg = [NSString stringWithFormat:@"Could not connect to the database"];
+        [self showMessage:msg];
+    }
+}
+
+- (void) showMessage:(NSString *)msg {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Inconvenience Regretted" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    [alertView autorelease];
 }
 
 - (void) viewDidAppear:(BOOL)animated {

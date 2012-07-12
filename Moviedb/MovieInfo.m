@@ -77,13 +77,14 @@ static sqlite3_stmt *addStmt = nil;
     return self;
 }
 
-- (void) addMovie {
+- (BOOL) addMovie {
     if(addStmt == nil) {
         // imdbID, name, rating, year, country, language, userRating, blurp, genre
         const char *sql = "insert into userData values(?,?,?,?,?,?,?,?,?)";
         if(sqlite3_prepare_v2(database, sql, -1, &addStmt, NULL) != SQLITE_OK) {
             NSLog(@"Error while creating add statment");
             sqlite3_errmsg(database);
+            return false;
         }
     }
     sqlite3_bind_text(addStmt, 1, [self.imdbId UTF8String], -1, SQLITE_TRANSIENT);
@@ -97,9 +98,11 @@ static sqlite3_stmt *addStmt = nil;
     sqlite3_bind_text(addStmt, 9, [self.genre UTF8String], -1, SQLITE_TRANSIENT);
     if(sqlite3_step(addStmt) != SQLITE_DONE) {
         NSLog(@"Error while inserting data");
+        return false;
         //NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
     }
     sqlite3_reset(addStmt);
+    return true;
 }
 
 + (void) getInitialDataToDisplay: (NSString *) dbPath {
