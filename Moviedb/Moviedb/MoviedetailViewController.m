@@ -8,6 +8,7 @@
 
 #import "MovieDetailViewController.h"
 #import "MovieInfo.h"
+#import "WebViewController.h"
 
 @interface MovieDetailViewController ()
 
@@ -34,6 +35,7 @@
 
 	// Do any additional setup after loading the view.
     self.titleLabel.text = [self.movieData name];
+    self.title = [self.movieData name];
 }
 
 - (void)viewDidUnload
@@ -49,6 +51,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellText = @"8.00000000000";
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    
+    return labelSize.height + 20;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // movie name is declared earlier
     return 7;
@@ -56,7 +67,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"MovieDetailCell";
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 0;
+    //cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
     
     // configure the cell
     switch (indexPath.row) {
@@ -94,6 +110,14 @@
             break;
     }
     return cell;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"imdbPage"]) {
+        WebViewController *destViewController = segue.destinationViewController;
+        destViewController.imdbId = [self.movieData imdbId];
+        destViewController.name = [self.movieData name];
+    }
 }
 
 - (void)dealloc {

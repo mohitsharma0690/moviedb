@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MovieInfo.h"
 
-@interface MovieDetailViewController : UIViewController <UITableViewDataSource>
+@interface MovieDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (retain, nonatomic) MovieInfo *movieData;
 @property (retain, nonatomic) IBOutlet UILabel *titleLabel;
 @property (retain, nonatomic) IBOutlet UITableView *movieDetailTableView;
