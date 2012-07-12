@@ -97,7 +97,7 @@ static sqlite3_stmt *addStmt = nil;
     sqlite3_bind_text(addStmt, 9, [self.genre UTF8String], -1, SQLITE_TRANSIENT);
     if(sqlite3_step(addStmt) != SQLITE_DONE) {
         NSLog(@"Error while inserting data");
-        NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+        //NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
     }
     sqlite3_reset(addStmt);
 }

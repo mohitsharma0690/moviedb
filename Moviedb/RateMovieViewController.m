@@ -75,23 +75,28 @@
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     [data setDictionary:self.movieData];
-    	
+    bool check=false;	
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     if([title isEqualToString:@"Good"]) {
         NSLog(@"User Rating : Good Movie");
         [data setValue:[NSNumber numberWithInt:3] forKey:@"userRating"];
+        check = true;
     } else if([title isEqualToString:@"Ok"]) {
         NSLog(@"User Rating : Ok Movie");
         [data setValue:[NSNumber numberWithInt:2] forKey:@"userRating"];
+        check = true;
     } else if([title isEqualToString:@"Bad"]) {
         NSLog(@"User Rating : Bad Movie");
         [data setValue:[NSNumber numberWithInt:1] forKey:@"userRating"];
+        check = true;
     } else {
         NSLog(@"No user rating");
     }
-    MovieInfo *movieObj = [[MovieInfo alloc] initMovieWithDict:data];
-    [appDelegate addMovie:movieObj];
-    [movieObj autorelease];
+    if(check) {
+        MovieInfo *movieObj = [[MovieInfo alloc] initMovieWithDict:data];
+        [appDelegate addMovie:movieObj];
+        [movieObj autorelease];
+    }
     [data autorelease];
 }
 

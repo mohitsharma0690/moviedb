@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		911A6DE415AE96DF003EEDFD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A6DE315AE96DF003EEDFD /* WebViewController.m */; };
+		911A6DE815AEA4D5003EEDFD /* TopRatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A6DE715AEA4D5003EEDFD /* TopRatedViewController.m */; };
 		9125CAEE15AC171700554D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAED15AC171700554D45 /* UIKit.framework */; };
 		9125CAF015AC171700554D45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAEF15AC171700554D45 /* Foundation.framework */; };
 		9125CAF215AC171700554D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9125CAF115AC171700554D45 /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		911A6DE215AE96DF003EEDFD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		911A6DE315AE96DF003EEDFD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		911A6DE615AEA4D5003EEDFD /* TopRatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRatedViewController.h; sourceTree = "<group>"; };
+		911A6DE715AEA4D5003EEDFD /* TopRatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRatedViewController.m; sourceTree = "<group>"; };
 		9125CAE915AC171700554D45 /* Moviedb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviedb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9125CAED15AC171700554D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9125CAEF15AC171700554D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +85,8 @@
 				91474FC915ACA79600788FD5 /* SearchDbViewController.m */,
 				916CB7B915ADBBBB001D7299 /* MoviedetailViewController.h */,
 				916CB7BA15ADBBBB001D7299 /* MoviedetailViewController.m */,
+				911A6DE615AEA4D5003EEDFD /* TopRatedViewController.h */,
+				911A6DE715AEA4D5003EEDFD /* TopRatedViewController.m */,
 				911A6DE215AE96DF003EEDFD /* WebViewController.h */,
 				911A6DE315AE96DF003EEDFD /* WebViewController.m */,
 				915E1D3515AC634600B0BDC9 /* MovieInfo.h */,
@@ -204,6 +209,7 @@
 				91474FCA15ACA79600788FD5 /* SearchDbViewController.m in Sources */,
 				916CB7BB15ADBBBB001D7299 /* MoviedetailViewController.m in Sources */,
 				911A6DE415AE96DF003EEDFD /* WebViewController.m in Sources */,
+				911A6DE815AEA4D5003EEDFD /* TopRatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,7 @@
     [super viewDidLoad];
     appDelegate = (MoviedbAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(@"viewDidLoad for SearchDbViewController %@",[appDelegate description]);
-    self.title = @"Moviedb";
+    self.title = @"Your Movie Collection";
     // need to check
 }
 
