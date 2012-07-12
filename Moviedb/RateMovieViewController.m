@@ -55,6 +55,7 @@
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     if(textField == _movieNameTextField) {
         [textField resignFirstResponder];
+
         if(textField.text.length > 0) {
             self.movieName = [textField text];
             self.movieData = [self getDataFromJSON];
@@ -152,10 +153,8 @@
     
     // add the requisite URL-prefix
     address = [NSString stringWithFormat:@"%@%@",@"http://www.deanclatworthy.com/imdb/?q=",address];
-    
     NSURL *url = [[NSURL alloc] initWithString:address];
     NSData *jsonData = [NSData dataWithContentsOfURL: url];
-    
     if(jsonData != nil) {
         
         NSError *error = nil;
