@@ -90,7 +90,7 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"topMovieDetail"]) {
+    if([segue.identifier isEqualToString:@"TopMovieDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         WebViewController *destViewController = [segue destinationViewController];
         destViewController.imdbId = [[self.sortedMovies objectAtIndex:indexPath.row] imdbId];

@@ -36,15 +36,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" textLabel="9A8-dL-oRH" style="IBUITableViewCellStyleDefault" id="qMv-Nb-53J">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" textLabel="9A8-dL-oRH" style="IBUITableViewCellStyleDefault" id="qMv-Nb-53J">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9A8-dL-oRH">
-                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <rect key="frame" x="10" y="0.0" width="267" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" label=""/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -55,7 +55,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="48v-ub-hEd" kind="push" identifier="showMovieDetail" id="DNa-Pl-2Gd"/>
+                                            <segue destination="48v-ub-hEd" kind="push" identifier="showMovieDetail" id="hq0-vO-hCo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -306,7 +306,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Cec-tv-cHy" kind="push" identifier="topMovieDetail" id="Gja-Su-PWH"/>
+                                            <segue destination="Cec-tv-cHy" kind="push" identifier="TopMovieDetail" id="2Ct-fL-904"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -365,11 +365,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomSearchCell" textLabel="RC7-gf-7l2" detailTextLabel="3PL-vP-NWg" style="IBUITableViewCellStyleSubtitle" id="0Y8-zY-5DU">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomSearchCell" textLabel="RC7-gf-7l2" detailTextLabel="3PL-vP-NWg" style="IBUITableViewCellStyleSubtitle" id="0Y8-zY-5DU">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RC7-gf-7l2">
@@ -390,7 +390,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Cec-tv-cHy" kind="push" identifier="CustomSearchSegue" id="5lm-AF-5RY"/>
+                                            <segue destination="Cec-tv-cHy" kind="push" identifier="CustomSearchSegue" id="ELC-hP-NIC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -452,11 +452,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieDetailCell" textLabel="Fbc-U6-M19" detailTextLabel="LKP-tz-Urf" style="IBUITableViewCellStyleSubtitle" id="gZv-KN-Twp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieDetailCell" textLabel="Fbc-U6-M19" detailTextLabel="LKP-tz-Urf" style="IBUITableViewCellStyleSubtitle" id="gZv-KN-Twp">
                                         <rect key="frame" x="0.0" y="22" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fbc-U6-M19">
@@ -477,7 +477,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Cec-tv-cHy" kind="push" identifier="imdbPage" id="En3-0y-5Dj"/>
+                                            <segue destination="Cec-tv-cHy" kind="push" identifier="imdbPage" id="OxY-cZ-uvC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -533,18 +533,62 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1712" y="818"/>
+            <point key="canvasLocation" x="1524" y="616"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo.jpeg" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="CustomSearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSearchViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MovieDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MovieDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieDetailTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RateMovieViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RateMovieViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="getRatingMessage:"/>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="outlet" name="movieDataTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="movieNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tapGesture" candidateClass="UITapGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="SearchDbViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchDbViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieDbTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TopRatedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopRatedViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="En3-0y-5Dj"/>
+        <segue reference="ELC-hP-NIC"/>
     </inferredMetricsTieBreakers>
 </document>

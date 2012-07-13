@@ -12,9 +12,12 @@
 @property (retain, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *movieData;
-@property NSInteger selectedRow;
+@property NSInteger selectedRowFirstComp;
+@property (copy, nonatomic) NSMutableArray *pickerItems;
+@property NSInteger selectedRowSecondComp;
 
-- (void) performSortBasedOnRow:(NSInteger) row;
+- (void) performSortBasedOnRows;
 - (void) showMessage:(NSString *)msg;
+- (void) loadPickerViewItems:(NSInteger) selRow;
 
 @end

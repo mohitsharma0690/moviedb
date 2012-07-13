@@ -124,8 +124,8 @@ static sqlite3_stmt *addStmt = nil;
                 NSNumber *userRating = [NSNumber numberWithInt:sqlite3_column_int(selectStmt, 6 )];
                 NSString *genre = [NSString stringWithUTF8String: (char *) sqlite3_column_text(selectStmt, 8)];
                 
-                NSLog(@"we got a row ");
-                printf("name : %s\n",name);
+//                NSLog(@"we got a row ");
+//                printf("name : %s\n",name);
                 NSString *movieName = [NSString stringWithUTF8String:name];
                 
                 MovieInfo *movieInfoObj = [[MovieInfo alloc] initMovieWithImdbId:imdbId withName:movieName withRating:rating withYear:year withCountry:country withLanguage:language withUserRating:userRating withBlurp:nil withGenre:genre];
